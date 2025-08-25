@@ -16,6 +16,8 @@ function getComputerChoice(ComputerChoice){
     }
     }
 
+// Takes the Human and Computer Choices and generates a Outcome
+
 function PlayRound(HumanChoice,ComputerChoice){
 
     if (HumanChoice == ComputerChoice){
