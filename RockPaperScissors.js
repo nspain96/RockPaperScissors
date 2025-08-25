@@ -1,10 +1,10 @@
-// User Selects Their Choice
+// Function Purpose - to generate a Human Choice for Rock Paper Scissors
 function getHumanChoice(Choice){
     let HumanChoice = prompt("Please Enter Rock, Paper, or Scissors");
     return(HumanChoice.toUpperCase());
 }
 
-// Function to Generate the Computers Choice
+// Function Purpose - to generate a Computer Choice for Rock Paper Scissors
 function getComputerChoice(ComputerChoice){
     let RandNum = Math.random();
     if (RandNum <= .333333){
@@ -16,7 +16,7 @@ function getComputerChoice(ComputerChoice){
     }
     }
 
-// Takes the Human and Computer Choices and generates a Outcome (Win, Lose, Tie)
+// Function Purpose - Takes The Human Choice and Computer Choice and generates a result (Win, Lose, Tie)
 
 function PlayRound(HumanChoice,ComputerChoice){
 
