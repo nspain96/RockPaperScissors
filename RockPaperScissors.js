@@ -21,34 +21,15 @@ function getComputerChoice(ComputerChoice){
 function PlayRound(HumanChoice,ComputerChoice){
 
     if (HumanChoice == ComputerChoice){
-        return("It's a Tie, Try Again!");
+        return "Tie" ;
 
-    } if ((HumanChoice == "ROCK") && (ComputerChoice == "SCISSORS")) {
-            return ("You Win! Rock Beats Scissors!");
+    } else if (
+        (HumanChoice == "ROCK") && (ComputerChoice == "SCISSORS") ||
+        (HumanChoice == "PAPER") && (ComputerChoice == "ROCK") ||
+        (HumanChoice == "SCISSORS") && (ComputerChoice == "PAPER")) {
+        return "Win";
     
-    } if ((HumanChoice == "ROCK") && (ComputerChoice == "PAPER")) {
-            return ("You Lose... Paper Beats Rock.");
-
-    } if ((HumanChoice == "PAPER") && (ComputerChoice == "ROCK")) {
-            return ("You Win! Paper Beats Rock!");
-
-    } if ((HumanChoice == "PAPER") && (ComputerChoice == "SCISSORS")) {
-            return ("You Lose... Scissors Beats Paper.");
-
-    } if ((HumanChoice == "SCISSORS") && (ComputerChoice == "PAPER")) {
-            return ("You Win! Scissors Beats Paper!");
-
-    } if ((HumanChoice == "SCISSORS") && (ComputerChoice == "ROCK")) {
-            return ("You Lose... Rock Beats Scissors.");          
-            
     } else {
-        return ("Someone won")
+        return "Lose";
     }
 }
-
-const HumanSelection = getHumanChoice();
-const ComputerSelection = getComputerChoice();
-const RoundResult = PlayRound(HumanSelection,ComputerSelection);
-
-console.log(RoundResult);
-
