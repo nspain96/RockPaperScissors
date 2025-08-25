@@ -16,13 +16,7 @@ function getComputerChoice(ComputerChoice){
     }
     }
 
-let humanScore = 0;
-let computerScore = 0;
-
-function PlayRound(Human,Computer){
-
-    let HumanChoice = getHumanChoice();
-    let ComputerChoice = getComputerChoice();
+function PlayRound(HumanChoice,ComputerChoice){
 
     if (HumanChoice == ComputerChoice){
         return("It's a Tie, Try Again!");
@@ -50,5 +44,9 @@ function PlayRound(Human,Computer){
     }
 }
 
-console.log(PlayRound());
+const HumanSelection = getHumanChoice();
+const ComputerSelection = getComputerChoice();
+const RoundResult = PlayRound(HumanSelection,ComputerSelection);
+
+console.log(RoundResult);
 
