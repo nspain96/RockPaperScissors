@@ -16,7 +16,7 @@ function getComputerChoice(ComputerChoice){
     }
     }
 
-// Takes the Human and Computer Choices and generates a Outcome
+// Takes the Human and Computer Choices and generates a Outcome (Win, Lose, Tie)
 
 function PlayRound(HumanChoice,ComputerChoice){
 
