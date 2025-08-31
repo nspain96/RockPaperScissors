@@ -34,8 +34,14 @@ function PlayRound(HumanChoice,ComputerChoice){
     }
 };
 
-// Lets interact with the buttons!
-const btn = document.querySelectorAll('button')
+// Lets select all of the buttons to interact with.
+const btns = document.querySelectorAll('button')
 
-// Add event listener if the button is clicked
+//For each button, run the following function
+btns.forEach(function(btn) {
+
+    btn.addEventListener('click',function() {
+        alert('Button was Clicked');
+    });
+});
 
