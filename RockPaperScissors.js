@@ -37,8 +37,10 @@ function PlayRound(HumanChoice,ComputerChoice){
 let HumanScore = 0;
 let ComputerScore = 0;
 
-// Interact with the Button that contains the ID Rock
+// // Get references to the selection buttons
 const rockBtn = document.getElementById('rock');
+const paperBtn = document.getElementById('paper');
+const scissorsBtn = document.getElementById('scissors');
 
 // Handle click event for the Rock button
 rockBtn.addEventListener('click', function() {
@@ -48,14 +50,28 @@ rockBtn.addEventListener('click', function() {
     const Result = PlayRound(HumanChoice,ComputerChoice);   
 
     if (Result == "Win"){
-    HumanScore++;
-    console.log(`You ${Result}! ${HumanChoice} beats ${ComputerChoice}`);
+        HumanScore++;
+        if (HumanScore === 5){
+            console.log(`That's Game. Congrats! You Won! Final Score - Human ${HumanScore} vs Computer ${ComputerScore}`);
+            HumanScore = 0;
+            ComputerScore = 0;
+        } else {
+            console.log(`You ${Result}! ${HumanChoice} beats ${ComputerChoice}. Your Score ${HumanScore} Computer Score ${ComputerScore}`);
+        }
   } else if (Result == "Lose") {
-    ComputerScore++;
-    console.log(`You ${Result}... ${ComputerChoice} beats ${HumanChoice}`);
-  }else {
-    console.log(`Tie. Both of you chose ${HumanChoice}`);
+        ComputerScore++;
+        if (ComputerScore === 5){
+            console.log(`That's Game. Sorry, You Lost... Final Score - Human ${HumanScore} vs Computer ${ComputerScore}`);
+            HumanScore = 0;
+            ComputerScore = 0;
+        } else {
+            console.log(`You ${Result}... ${ComputerChoice} beats ${HumanChoice}. Your Score ${HumanScore} Computer Score ${ComputerScore}`);
+        }
+   
+  } else {
+    console.log(`Tie. Both of you chose ${HumanChoice}. Your Score ${HumanScore} Computer Score ${ComputerScore}`);
   }
+
 });
 
 
