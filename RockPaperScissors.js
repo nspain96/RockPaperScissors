@@ -34,13 +34,13 @@ function PlayRound(HumanChoice,ComputerChoice){
     }
 };
 
-let HumanScore = 0;
-let ComputerScore = 0;
-
 // // Get references to the selection buttons
 const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
+
+let HumanScore = 0;
+let ComputerScore = 0;
 
 // Handle click event for the Rock button
 rockBtn.addEventListener('click', function() {
