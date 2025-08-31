@@ -32,31 +32,10 @@ function PlayRound(HumanChoice,ComputerChoice){
     } else {
         return "Lose";
     }
-}
+};
 
-// ForLoop to find the winner 
+// Lets interact with the buttons!
+const btn = document.querySelectorAll('button')
 
-let HumanScore = 0;
-let ComputerScore = 0;
+// Add event listener if the button is clicked
 
-for (let Round = 1; Round < 6; Round++) {
-  // Run Functions to get variables
-  let HumanChoice = getHumanChoice();
-  let ComputerChoice = getComputerChoice();
-  let Result = PlayRound(HumanChoice,ComputerChoice);
-
-  if (Result == "Win"){
-    HumanScore++;
-    console.log(`You ${Result} Round ${Round}! ${HumanChoice} beats ${ComputerChoice}`);
-  } else if (Result == "Lose") {
-    ComputerScore++;
-    console.log(`You ${Result} Round ${Round}... ${ComputerChoice} beats ${HumanChoice}`);
-  }
-
-  else {
-    console.log(`Round ${Round} is a Tie. Both of you chose ${HumanChoice}`);
-  }
-}
-
-// Logs the final score of the 5 Rounds
-console.log(`Final Score: Human ${HumanScore}  Computer: ${ComputerScore}`)
