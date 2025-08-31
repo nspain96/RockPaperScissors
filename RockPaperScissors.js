@@ -1,9 +1,3 @@
-// Function Purpose - to generate a Human Choice for Rock Paper Scissors
-function getHumanChoice(Choice){
-    let HumanChoice = prompt("Please Enter Rock, Paper, or Scissors");
-    return(HumanChoice.toUpperCase());
-}
-
 // Function Purpose - to generate a Computer Choice for Rock Paper Scissors
 function getComputerChoice(ComputerChoice){
     let RandNum = Math.random();
