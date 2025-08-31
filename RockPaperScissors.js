@@ -34,14 +34,31 @@ function PlayRound(HumanChoice,ComputerChoice){
     }
 };
 
-// Lets select all of the buttons to interact with.
-const btns = document.querySelectorAll('button')
+let HumanScore = 0;
+let ComputerScore = 0;
 
-//For each button, run the following function
-btns.forEach(function(btn) {
+// Interact with the Button that contains the ID Rock
+const rockBtn = document.getElementById('rock');
 
-    btn.addEventListener('click',function() {
-        alert('Button was Clicked');
-    });
+// Handle click event for the Rock button
+rockBtn.addEventListener('click', function() {
+
+    const HumanChoice = "ROCK";
+    const ComputerChoice = getComputerChoice();
+    const Result = PlayRound(HumanChoice,ComputerChoice);   
+
+    if (Result == "Win"){
+    HumanScore++;
+    console.log(`You ${Result}! ${HumanChoice} beats ${ComputerChoice}`);
+  } else if (Result == "Lose") {
+    ComputerScore++;
+    console.log(`You ${Result}... ${ComputerChoice} beats ${HumanChoice}`);
+  }else {
+    console.log(`Tie. Both of you chose ${HumanChoice}`);
+  }
 });
+
+
+
+
 
