@@ -1,10 +1,26 @@
 button {
 margin-bottom: 40px;
 margin-top: 20px;
+height: 30px;
+width: 100px;
+background-color: #555; 
+color: white;
+ border-radius: 10px;
 }
 
 div {
-    background-color: antiquewhite;
+    background-color: #f0f0f0;
     border: 2px solid black;
     padding: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    height: 30px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+align-items: center;
+}
+
+h1{
+    
 }

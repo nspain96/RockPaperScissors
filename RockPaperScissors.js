@@ -33,12 +33,13 @@ const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
 
-let HumanScore = 0;
-let ComputerScore = 0;
-
 // Create and add a div to display the result of each round
 const div = document.createElement("div");
 document.body.appendChild(div);
+
+let HumanScore = 0;
+let ComputerScore = 0;
+
 
 // Handle click event for the Rock button
 rockBtn.addEventListener('click', function() {
@@ -71,6 +72,80 @@ rockBtn.addEventListener('click', function() {
   }
 
 });
+
+// Handle click event for the Paper button
+paperBtn.addEventListener('click', function() {
+
+    const HumanChoice = "PAPER";
+    const ComputerChoice = getComputerChoice();
+    const Result = PlayRound(HumanChoice,ComputerChoice);   
+
+    if (Result == "Win"){
+        HumanScore++;
+        if (HumanScore === 5){
+            div.textContent = `That's Game. Congrats! You Won! Final Score - Human ${HumanScore} vs Computer ${ComputerScore}`;
+            HumanScore = 0;
+            ComputerScore = 0;
+        } else {
+            div.textContent = `You ${Result}! ${HumanChoice} beats ${ComputerChoice}. Your Score ${HumanScore} Computer Score ${ComputerScore}`;
+        }
+  } else if (Result == "Lose") {
+        ComputerScore++;
+        if (ComputerScore === 5){
+            div.textContent = `That's Game. Sorry, You Lost... Final Score - Human ${HumanScore} vs Computer ${ComputerScore}`;
+            HumanScore = 0;
+            ComputerScore = 0;
+        } else {
+            div.textContent = `You ${Result}... ${ComputerChoice} beats ${HumanChoice}. Your Score ${HumanScore} Computer Score ${ComputerScore}`;
+        }
+   
+  } else {
+    div.textContent = `Tie. Both of you chose ${HumanChoice}. Your Score ${HumanScore} Computer Score ${ComputerScore}`;
+  }
+
+});
+
+// Handle click event for the Scissors button
+scissorsBtn.addEventListener('click', function() {
+
+    const HumanChoice = "SCISSORS";
+    const ComputerChoice = getComputerChoice();
+    const Result = PlayRound(HumanChoice,ComputerChoice);   
+
+    if (Result == "Win"){
+        HumanScore++;
+        if (HumanScore === 5){
+            div.textContent = `That's Game. Congrats! You Won! Final Score - Human ${HumanScore} vs Computer ${ComputerScore}`;
+            HumanScore = 0;
+            ComputerScore = 0;
+        } else {
+            div.textContent = `You ${Result}! ${HumanChoice} beats ${ComputerChoice}. Your Score ${HumanScore} Computer Score ${ComputerScore}`;
+        }
+  } else if (Result == "Lose") {
+        ComputerScore++;
+        if (ComputerScore === 5){
+            div.textContent = `That's Game. Sorry, You Lost... Final Score - Human ${HumanScore} vs Computer ${ComputerScore}`;
+            HumanScore = 0;
+            ComputerScore = 0;
+        } else {
+            div.textContent = `You ${Result}... ${ComputerChoice} beats ${HumanChoice}. Your Score ${HumanScore} Computer Score ${ComputerScore}`;
+        }
+   
+  } else {
+    div.textContent = `Tie. Both of you chose ${HumanChoice}. Your Score ${HumanScore} Computer Score ${ComputerScore}`;
+  }
+
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
